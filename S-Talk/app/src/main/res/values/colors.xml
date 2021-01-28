@@ -5,7 +5,7 @@
     <color name="colorAccent">#222A35</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-    <color name="trans">#00000000</color>
+    <color name="trans">#000000</color>
     <color name="grey">#4D5057</color>
     <color name="green">#4FC18A</color>
     <color name="black_shade">#333333</color>

@@ -8,7 +8,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
-        <item name="colorAccent">@color/white</item>
+        <item name="colorAccent">@color/green</item>
         <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
 
     </style>

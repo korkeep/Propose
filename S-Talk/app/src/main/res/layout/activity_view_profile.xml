@@ -8,7 +8,7 @@
     tools:context=".ViewProfileActivity">
 
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
         android:visibility="visible"
@@ -91,7 +91,7 @@
 
 
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>

@@ -13,28 +13,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:layout_below="@id/toolbar"
         android:padding="16dp"
         android:background="@color/white"
-        android:layout_margin="@dimen/margin_20_dp"
-        android:layout_height="wrap_content">
+        android:layout_margin="@dimen/margin_20_dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/ic_login_vector"
-            android:layout_gravity="left"
-/>
         <TextView
             android:id="@+id/login_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="@dimen/margin_10_dp"
-            android:text="Welcome back,"
+            android:text="Welcome"
             android:textColor="@color/black"
             android:textSize="36sp"/>
 
@@ -42,7 +35,7 @@
             android:id="@+id/msg_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sign in to continue..."
+            android:text="Sign in to continue"
             android:layout_gravity="left"
             android:textColor="@color/grey"
             android:textSize="20sp"/>

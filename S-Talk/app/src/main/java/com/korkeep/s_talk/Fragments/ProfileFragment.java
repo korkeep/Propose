@@ -1,5 +1,6 @@
 package com.korkeep.s_talk.Fragments;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -122,6 +123,7 @@ public class ProfileFragment extends Fragment {
 
 
                 reference.child("username").setValue(username.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @SuppressLint("ShowToast")
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){

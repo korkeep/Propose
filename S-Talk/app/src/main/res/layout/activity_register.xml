@@ -13,27 +13,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:layout_below="@id/toolbar"
         android:padding="16dp"
         android:layout_margin="@dimen/margin_20_dp"
-        android:layout_height="wrap_content">
+        android:gravity="center">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/ic_signup_vector"
-            android:layout_gravity="left"
-            />
         <TextView
             android:id="@+id/register_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="@dimen/margin_10_dp"
-            android:text="Welcome,"
+            android:text="Welcome"
             android:textColor="@color/black"
             android:textSize="36sp"/>
 
@@ -41,7 +34,7 @@
             android:id="@+id/msg_reg_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="register yourself to continue..."
+            android:text="Register yourself to continue"
             android:layout_gravity="left"
             android:textColor="@color/grey"
             android:textSize="20sp"/>
@@ -53,7 +46,8 @@
             android:background="@drawable/edittext_bg"
             android:layout_marginTop="30dp"
             app:met_floatingLabel="normal"
-            android:hint="Username"/>
+            android:hint="Username"
+            tools:ignore="MissingPrefix" />
 
         <EditText
             android:layout_width="match_parent"
@@ -63,7 +57,8 @@
             android:inputType="textEmailAddress"
             android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
-            android:hint="Email"/>
+            android:hint="Email"
+            tools:ignore="MissingPrefix"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -73,7 +68,8 @@
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
-            android:hint="Password"/>
+            android:hint="Password"
+            tools:ignore="MissingPrefix"/>
 
         <Button
             android:layout_width="wrap_content"
