@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
         dialog = Utils.showLoader(RegisterActivity.this);
 
         auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
@@ -108,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if(dialog!=null){
                                 dialog.dismiss();
                             }
-                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            reference.setValue(hashMap).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
