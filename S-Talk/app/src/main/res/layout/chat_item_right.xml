@@ -40,7 +40,7 @@
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
             android:text="Hi, How are you?"
-            android:textColor="@color/colorLetter"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:layout_alignParentRight="true" />
 
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_seen"
-            android:textColor="@color/colorLetter"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:layout_marginRight="15dp"
             android:layout_below="@id/show_message"

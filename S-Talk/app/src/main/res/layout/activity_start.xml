@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="64dp">
 
         <Button
             android:id="@+id/login"
@@ -27,6 +27,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_bg"
             android:textColor="@color/colorLetter"
+            android:paddingLeft="@dimen/padding_20_dp"
+            android:paddingRight="@dimen/padding_20_dp"
+            android:textSize="18sp"
             android:text="Login"
             android:textAllCaps="false"
             android:layout_weight="1"
@@ -41,6 +44,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_bg"
             android:textColor="@color/colorLetter"
+            android:paddingLeft="@dimen/padding_20_dp"
+            android:paddingRight="@dimen/padding_20_dp"
+            android:textSize="18sp"
             android:text="Register"
             android:textAllCaps="false"
             android:layout_weight="1"
