@@ -26,8 +26,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     public static  final int MSG_TYPE_LEFT = 0;
     public static  final int MSG_TYPE_RIGHT = 1;
-    Typeface MR,MRR;
-
 
     private Context mContext;
     private List<Chat> mChat;
@@ -39,10 +37,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         this.mChat = mChat;
         this.mContext = mContext;
         this.imageurl = imageurl;
-
-        MRR = Typeface.createFromAsset(mContext.getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(mContext.getAssets(), "fonts/myriad.ttf");
-
     }
 
     @NonNull
@@ -59,10 +53,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
-
         Chat chat = mChat.get(position);
-        holder.show_message.setTypeface(MRR);
-        holder.txt_seen.setTypeface(MRR);
 
         holder.show_message.setText(chat.getMessage());
         if(chat.getTime()!=null && !chat.getTime().trim().equals("")) {

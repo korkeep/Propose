@@ -21,7 +21,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     EditText send_email;
     Button btn_reset;
-    Typeface MR, MRR;
     TextView hint_tv;
     FirebaseAuth firebaseAuth;
 
@@ -29,9 +28,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-
-        MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,10 +37,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
         send_email = findViewById(R.id.send_email);
         btn_reset = findViewById(R.id.btn_reset);
         hint_tv = findViewById(R.id.hint_tv);
-
-        send_email.setTypeface(MRR);
-        btn_reset.setTypeface(MR);
-        hint_tv.setTypeface(MR);
 
         firebaseAuth = FirebaseAuth.getInstance();
 

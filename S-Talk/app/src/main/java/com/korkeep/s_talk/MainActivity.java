@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     CircleImageView profile_image;
     TextView username;
     ProgressDialog dialog;
-    Typeface MR,MRR;
-
     FirebaseUser firebaseUser;
     DatabaseReference reference;
     OnItemClick onItemClick;
@@ -60,8 +58,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
         setContentView(R.layout.activity_main);
 
         this.onItemClick = this;
-        MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
             }
         });
         username = findViewById(R.id.username);
-        username.setTypeface(MR);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());

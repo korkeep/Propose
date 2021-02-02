@@ -36,7 +36,6 @@ public class ChatsFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
-   Typeface MR, MRR;
     private UserAdapter userAdapter;
     private List<User> mUsers;
     FrameLayout frameLayout;
@@ -63,19 +62,10 @@ public class ChatsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chats, container, false);
 
-        MRR = Typeface.createFromAsset(getContext().getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getContext().getAssets(), "fonts/myriad.ttf");
-
         recyclerView = view.findViewById(R.id.recycler_view);
         frameLayout = view.findViewById(R.id.es_layout);
         es_descp = view.findViewById(R.id.es_descp);
         es_title = view.findViewById(R.id.es_title);
-
-        es_descp.setTypeface(MR);
-        es_title.setTypeface(MRR);
-
-
-
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

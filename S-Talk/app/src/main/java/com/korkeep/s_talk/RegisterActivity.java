@@ -30,7 +30,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText username, email, password;
     TextView register_tv, msg_reg_tv;
     Button btn_register;
-    Typeface MR, MRR;
     FirebaseAuth auth;
     DatabaseReference reference;
     ProgressDialog dialog;
@@ -39,9 +38,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,13 +50,6 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register = findViewById(R.id.btn_register);
         register_tv = findViewById(R.id.register_tv);
         msg_reg_tv = findViewById(R.id.msg_reg_tv);
-
-        msg_reg_tv.setTypeface(MRR);
-        username.setTypeface(MRR);
-        email.setTypeface(MRR);
-        password.setTypeface(MRR);
-        btn_register.setTypeface(MR);
-        register_tv.setTypeface(MR);
 
         auth = FirebaseAuth.getInstance();
 

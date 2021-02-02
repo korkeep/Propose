@@ -34,7 +34,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private boolean ischat;
     private OnItemClick onItemClick;
 
-    Typeface MR,MRR;
     String theLastMessage;
 
     public UserAdapter(Context mContext, OnItemClick onItemClick, List<User> mUsers, boolean ischat){
@@ -42,12 +41,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         this.mUsers = mUsers;
         this.mContext = mContext;
         this.ischat = ischat;
-
-        if(mContext!=null) {
-            MRR = Typeface.createFromAsset(mContext.getAssets(), "fonts/myriadregular.ttf");
-            MR = Typeface.createFromAsset(mContext.getAssets(), "fonts/myriad.ttf");
-        }
-
     }
 
     @NonNull
@@ -61,8 +54,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         final User user = mUsers.get(position);
-        holder.username.setTypeface(MR);
-        holder.last_msg.setTypeface(MRR);
 
         holder.username.setText(user.getUsername());
         if (user.getImageURL().equals("default")){

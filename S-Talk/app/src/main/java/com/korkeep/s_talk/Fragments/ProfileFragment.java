@@ -55,7 +55,6 @@ public class ProfileFragment extends Fragment {
     Button save;
     DatabaseReference reference;
     FirebaseUser fuser;
-    Typeface MR,MRR;
 
     StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
@@ -68,9 +67,6 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        MRR = Typeface.createFromAsset(getContext().getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getContext().getAssets(), "fonts/myriad.ttf");
-
 
         image_profile = view.findViewById(R.id.profile_image);
         username = view.findViewById(R.id.username);
@@ -78,12 +74,6 @@ public class ProfileFragment extends Fragment {
         bio_et = view.findViewById(R.id.bio_et);
         edit_img = view.findViewById(R.id.edit_image);
         save = view.findViewById(R.id.save_btn);
-
-
-        username.setTypeface(MR);
-        profile_tv.setTypeface(MR);
-        bio_et.setTypeface(MRR);
-        save.setTypeface(MR);
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 

@@ -16,7 +16,6 @@ public class StartActivity extends AppCompatActivity {
 
     Button login, register;
     TextView chat_title_tv;
-    Typeface MR, MRR;
 
     FirebaseUser firebaseUser;
 
@@ -40,18 +39,9 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
-
-
-
         login = findViewById(R.id.login);
         register = findViewById(R.id.register);
         chat_title_tv = findViewById(R.id.chat_title_tv);
-
-        login.setTypeface(MR);
-        register.setTypeface(MR);
-        chat_title_tv.setTypeface(MR);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

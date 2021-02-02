@@ -50,8 +50,6 @@ public class MessageActivity extends AppCompatActivity {
     CircleImageView profile_image;
     TextView username;
 
-    Typeface MR, MRR;
-
     FirebaseUser fuser;
     DatabaseReference reference;
 
@@ -78,9 +76,6 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
 
-        MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
@@ -105,10 +100,6 @@ public class MessageActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         btn_send = findViewById(R.id.btn_send);
         text_send = findViewById(R.id.text_send);
-
-        username.setTypeface(MR);
-        text_send.setTypeface(MRR);
-
 
         intent = getIntent();
         userid = intent.getStringExtra("userid");

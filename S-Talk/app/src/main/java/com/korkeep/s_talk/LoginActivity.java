@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
     Button btn_login;
-    Typeface MR,MRR;
     ProgressDialog dialog;
 
     FirebaseAuth auth;
@@ -35,9 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,13 +48,6 @@ public class LoginActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         forgot_password = findViewById(R.id.forgot_password);
         msg_tv = findViewById(R.id.msg_tv);
-
-        msg_tv.setTypeface(MRR);
-        login_tv.setTypeface(MR);
-        email.setTypeface(MRR);
-        password.setTypeface(MRR);
-        btn_login.setTypeface(MRR);
-        forgot_password.setTypeface(MRR);
 
         forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override

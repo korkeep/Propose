@@ -38,7 +38,6 @@ public class UsersFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
-    Typeface MR, MRR;
     FrameLayout frameLayout;
     TextView es_descp, es_title;
 
@@ -63,17 +62,10 @@ public class UsersFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_users, container, false);
 
-
-        MRR = Typeface.createFromAsset(getContext().getAssets(), "fonts/myriadregular.ttf");
-        MR = Typeface.createFromAsset(getContext().getAssets(), "fonts/myriad.ttf");
-
         recyclerView = view.findViewById(R.id.recycler_view);
         frameLayout = view.findViewById(R.id.es_layout);
         es_descp = view.findViewById(R.id.es_descp);
         es_title = view.findViewById(R.id.es_title);
-
-        es_descp.setTypeface(MR);
-        es_title.setTypeface(MRR);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
