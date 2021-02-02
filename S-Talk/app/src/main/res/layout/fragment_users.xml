@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorBackground"
     tools:context=".Fragments.UsersFragment">
 
     <EditText
@@ -16,8 +16,8 @@
         android:background="@drawable/edittext_bg"
         android:textSize="16sp"
         android:textCursorDrawable="@null"
-        android:textColorHint="@color/grey"
-        android:textColor="@color/grey"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:hint="Search user by name..."
         android:id="@+id/search_users"/>
 

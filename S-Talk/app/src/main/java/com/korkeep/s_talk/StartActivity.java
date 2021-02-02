@@ -41,7 +41,6 @@ public class StartActivity extends AppCompatActivity {
 
         login = findViewById(R.id.login);
         register = findViewById(R.id.register);
-        chat_title_tv = findViewById(R.id.chat_title_tv);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

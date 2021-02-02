@@ -5,10 +5,10 @@
         <!-- Customize your theme here. -->
         <item name="android:alertDialogStyle">@style/CustomAlertDialogStyle</item>
         <item name="android:backgroundDimEnabled">true</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorBackground</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
-        <item name="colorAccent">@color/green</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
 
     </style>
@@ -36,16 +36,16 @@
     </style>
 
     <style name="CustomAlertDialogStyle">
-        <item name="android:bottomBright">@color/trans</item>
-        <item name="android:bottomDark">@color/trans</item>
-        <item name="android:bottomMedium">@color/trans</item>
-        <item name="android:centerBright">@color/trans</item>
-        <item name="android:centerDark">@color/trans</item>
-        <item name="android:centerMedium">@color/trans</item>
-        <item name="android:fullBright">@color/trans</item>
-        <item name="android:fullDark">@color/trans</item>
-        <item name="android:topBright">@color/trans</item>
-        <item name="android:topDark">@color/trans</item>
+        <item name="android:bottomBright">@color/colorLetter</item>
+        <item name="android:bottomDark">@color/colorLetter</item>
+        <item name="android:bottomMedium">@color/colorLetter</item>
+        <item name="android:centerBright">@color/colorLetter</item>
+        <item name="android:centerDark">@color/colorLetter</item>
+        <item name="android:centerMedium">@color/colorLetter</item>
+        <item name="android:fullBright">@color/colorLetter</item>
+        <item name="android:fullDark">@color/colorLetter</item>
+        <item name="android:topBright">@color/colorLetter</item>
+        <item name="android:topDark">@color/colorLetter</item>
     </style>
 
 </resources>

@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".RegisterActivity">
 
     <include
@@ -21,22 +21,12 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/register_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="@dimen/margin_10_dp"
-            android:text="Welcome"
-            android:textColor="@color/black"
-            android:textSize="36sp"/>
-
-        <TextView
             android:id="@+id/msg_reg_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register yourself to continue"
             android:layout_gravity="left"
-            android:textColor="@color/grey"
+            android:textColor="@color/colorLetter"
             android:textSize="20sp"/>
 
         <EditText
@@ -46,6 +36,8 @@
             android:background="@drawable/edittext_bg"
             android:layout_marginTop="30dp"
             app:met_floatingLabel="normal"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:hint="Username"
             tools:ignore="MissingPrefix" />
 
@@ -57,6 +49,8 @@
             android:inputType="textEmailAddress"
             android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:hint="Email"
             tools:ignore="MissingPrefix"/>
 
@@ -68,6 +62,8 @@
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:hint="Password"
             tools:ignore="MissingPrefix"/>
 
@@ -85,7 +81,7 @@
             android:drawableRight="@drawable/ic_arrow_img"
             android:background="@drawable/button_bg"
             android:layout_marginTop="20dp"
-            android:textColor="#fff"/>
+            android:textColor="@color/colorLetter"/>
 
 
     </LinearLayout>

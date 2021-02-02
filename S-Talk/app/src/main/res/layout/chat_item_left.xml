@@ -15,7 +15,7 @@
         android:id="@+id/time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/grey"
+        android:textColor="@color/colorLetter"
         android:textSize="12sp"
         android:text=""
         android:layout_marginLeft="@dimen/margin_10_dp"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txt_seen"
         android:visibility="gone"
-        android:textColor="@color/white"
+        android:textColor="@color/colorLetter"
         android:textSize="14sp"
         android:layout_below="@id/show_message"/>
 

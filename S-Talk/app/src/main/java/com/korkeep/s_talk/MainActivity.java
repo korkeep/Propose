@@ -101,8 +101,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
 
         reference = FirebaseDatabase.getInstance().getReference("Chats");
-        //ToDo: 에러 수정 + 주석 해제 (210128)
-        //dialog = Utils.showLoader(MainActivity.this);
+        dialog = Utils.showLoader(MainActivity.this);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -128,10 +127,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
                 viewPager.setAdapter(viewPagerAdapter);
 
                 tabLayout.setupWithViewPager(viewPager);
-                //ToDo: 에러 수정 + 주석 해제 (210128)
-                /*if(dialog!=null){
+                if(dialog!=null){
                     dialog.dismiss();
-                }*/
+                }
 
             }
 

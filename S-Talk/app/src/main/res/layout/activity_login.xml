@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <include
@@ -18,32 +18,23 @@
         android:gravity="center"
         android:layout_below="@id/toolbar"
         android:padding="16dp"
-        android:background="@color/white"
         android:layout_margin="@dimen/margin_20_dp">
 
         <TextView
             android:id="@+id/login_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="@dimen/margin_10_dp"
-            android:text="Welcome"
-            android:textColor="@color/black"
-            android:textSize="36sp"/>
-
-        <TextView
-            android:id="@+id/msg_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Sign in to continue"
             android:layout_gravity="left"
-            android:textColor="@color/grey"
+            android:textColor="@color/colorLetter"
             android:textSize="20sp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/email"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:background="@drawable/edittext_bg"
             android:inputType="textEmailAddress"
             android:layout_marginTop="30dp"
@@ -53,6 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/password"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:background="@drawable/edittext_bg"
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
@@ -72,7 +65,7 @@
             android:drawableRight="@drawable/ic_arrow_img"
             android:background="@drawable/button_bg"
             android:layout_marginTop="20dp"
-            android:textColor="#fff"/>
+            android:textColor="@color/colorLetter"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +76,7 @@
             android:layout_gravity="start"
             android:textStyle="bold"
             android:id="@+id/forgot_password"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorLetter"/>
 
 
     </LinearLayout>

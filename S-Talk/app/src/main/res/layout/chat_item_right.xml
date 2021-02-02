@@ -16,17 +16,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/profile_image"
             android:visibility="gone"/>
+
         <TextView
             android:id="@+id/time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/grey"
+            android:textColor="@color/colorLetter"
             android:textSize="12sp"
             android:text=""
             android:layout_marginRight="@dimen/margin_10_dp"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/show_message"
-            />
+            android:layout_toLeftOf="@id/show_message" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
             android:text="Hi, How are you?"
-            android:textColor="@color/white"
+            android:textColor="@color/colorLetter"
             android:textSize="14sp"
             android:layout_alignParentRight="true" />
 
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_seen"
-            android:textColor="@color/white"
+            android:textColor="@color/colorLetter"
             android:textSize="14sp"
             android:layout_marginRight="15dp"
             android:layout_below="@id/show_message"
