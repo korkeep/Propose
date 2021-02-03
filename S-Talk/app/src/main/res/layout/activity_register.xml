@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorBackground"
@@ -7,85 +7,91 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@id/toolbar"
-        android:padding="16dp"
-        android:layout_margin="@dimen/margin_20_dp"
-        android:gravity="center">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/msg_reg_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register yourself to continue"
-            android:layout_gravity="left"
-            android:textColor="@color/colorLetter"
-            android:textSize="20sp"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/bar_layout"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/username"
-            android:background="@drawable/edittext_bg"
-            android:layout_marginTop="30dp"
-            app:met_floatingLabel="normal"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/colorAccent"
-            android:hint="Username"
-            tools:ignore="MissingPrefix" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar"
+            android:padding="16dp"
+            android:layout_margin="@dimen/margin_20_dp"
+            android:gravity="center">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:background="@drawable/edittext_bg"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/colorAccent"
-            android:hint="Email"
-            tools:ignore="MissingPrefix"/>
+            <TextView
+                android:id="@+id/msg_reg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register yourself to continue"
+                android:layout_gravity="left"
+                android:textColor="@color/colorLetter"
+                android:textSize="20sp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:background="@drawable/edittext_bg"
-            android:inputType="textPassword"
-            android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/colorAccent"
-            android:hint="Password"
-            tools:ignore="MissingPrefix"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:background="@drawable/edittext_bg"
+                android:layout_marginTop="30dp"
+                app:met_floatingLabel="normal"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/colorAccent"
+                android:hint="Username"
+                tools:ignore="MissingPrefix" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Get Started"
-            android:paddingLeft="@dimen/padding_20_dp"
-            android:paddingRight="@dimen/padding_20_dp"
-            android:id="@+id/btn_register"
-            android:drawablePadding="40dp"
-            android:textAllCaps="false"
-            android:layout_gravity="left"
-            android:textSize="18sp"
-            android:drawableRight="@drawable/ic_arrow_img"
-            android:background="@drawable/button_bg"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorLetter"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:background="@drawable/edittext_bg"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="20dp"
+                app:met_floatingLabel="normal"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/colorAccent"
+                android:hint="Email"
+                tools:ignore="MissingPrefix"/>
 
-    </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:background="@drawable/edittext_bg"
+                android:inputType="textPassword"
+                android:layout_marginTop="20dp"
+                app:met_floatingLabel="normal"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/colorAccent"
+                android:hint="Password"
+                tools:ignore="MissingPrefix"/>
 
-</RelativeLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Started"
+                android:paddingLeft="@dimen/padding_20_dp"
+                android:paddingRight="@dimen/padding_20_dp"
+                android:id="@+id/btn_register"
+                android:drawablePadding="40dp"
+                android:textAllCaps="false"
+                android:layout_gravity="left"
+                android:textSize="18sp"
+                android:drawableRight="@drawable/ic_arrow_img"
+                android:background="@drawable/button_bg"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorLetter"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

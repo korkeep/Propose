@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorBackground"
@@ -7,79 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_below="@id/toolbar"
-        android:padding="16dp"
-        android:layout_margin="@dimen/margin_20_dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/login_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign in to continue"
-            android:layout_gravity="left"
-            android:textColor="@color/colorLetter"
-            android:textSize="20sp"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/bar_layout"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/colorAccent"
-            android:background="@drawable/edittext_bg"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="30dp"
-            android:hint="Email"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/colorAccent"
-            android:background="@drawable/edittext_bg"
-            android:inputType="textPassword"
-            android:layout_marginTop="20dp"
-            android:hint="Password"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="18sp"
-            android:textAllCaps="false"
-            android:id="@+id/btn_login"
-            android:paddingLeft="@dimen/padding_20_dp"
-            android:paddingRight="@dimen/padding_20_dp"
-            android:drawablePadding="40dp"
-            android:layout_gravity="left"
-            android:drawableRight="@drawable/ic_arrow_img"
-            android:background="@drawable/button_bg"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorLetter"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:gravity="center"
-            android:text="Forgot your password?"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="start"
-            android:textStyle="bold"
-            android:id="@+id/forgot_password"
-            android:textColor="@color/colorLetter"/>
+            android:layout_below="@id/toolbar"
+            android:padding="16dp"
+            android:layout_margin="@dimen/margin_20_dp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/login_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign in to continue"
+                android:layout_gravity="left"
+                android:textColor="@color/colorLetter"
+                android:textSize="20sp"/>
 
-</RelativeLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/colorAccent"
+                android:background="@drawable/edittext_bg"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="30dp"
+                android:hint="Email"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/colorAccent"
+                android:background="@drawable/edittext_bg"
+                android:inputType="textPassword"
+                android:layout_marginTop="20dp"
+                android:hint="Password"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:id="@+id/btn_login"
+                android:paddingLeft="@dimen/padding_20_dp"
+                android:paddingRight="@dimen/padding_20_dp"
+                android:drawablePadding="40dp"
+                android:layout_gravity="left"
+                android:drawableRight="@drawable/ic_arrow_img"
+                android:background="@drawable/button_bg"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorLetter"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Forgot your password?"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:textStyle="bold"
+                android:id="@+id/forgot_password"
+                android:textColor="@color/colorLetter"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
