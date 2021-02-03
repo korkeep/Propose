@@ -67,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(LoginActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 } else {
-
                     dialog = Utils.showLoader(LoginActivity.this);
                     auth.signInWithEmailAndPassword(txt_email, txt_password)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -77,16 +76,15 @@ public class LoginActivity extends AppCompatActivity {
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         if(dialog!=null){
-                                        dialog.dismiss();
+                                            dialog.dismiss();
                                         }
                                         startActivity(intent);
                                         finish();
                                     } else {
                                         if(dialog!=null){
-                                        dialog.dismiss();
+                                            dialog.dismiss();
                                         }
                                         Toast.makeText(LoginActivity.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
-
                                     }
                                 }
                             });

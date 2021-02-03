@@ -12,7 +12,7 @@
         android:src="@mipmap/ic_launcher"/>
 
     <RelativeLayout
-        android:layout_width="256dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/profile_image">
 
@@ -56,7 +56,8 @@
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:background="@drawable/background_left"/>
+            android:background="@drawable/background_left"
+            android:maxWidth="256dp"/>
 
     </RelativeLayout>
 
