@@ -68,14 +68,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         if (position == mChat.size()-1){
             if (chat.isIsseen()){
-                holder.txt_seen.setText("Seen");
+                //ToDo 여기 카톡 읽으면 읽었다는 마크 붙이기
+                holder.txt_seen.setText("New");
             } else {
-                holder.txt_seen.setText("1");
+                //ToDo 여기 카톡 안읽었으면 안읽었다는 마크 붙이기
+                holder.txt_seen.setText("Now");
             }
         } else {
             holder.txt_seen.setVisibility(View.GONE);
         }
-
     }
 
     @Override
