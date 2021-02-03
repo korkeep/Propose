@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:padding="8dp"
     android:layout_height="wrap_content">
 
@@ -11,47 +11,53 @@
         android:id="@+id/profile_image"
         android:src="@mipmap/ic_launcher"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toRightOf="@id/show_message"
-        android:layout_alignBottom="@id/show_message"
-        android:layout_marginLeft="8dp"
-        android:layout_toEndOf="@id/show_message"
-        android:gravity="start|bottom">
+        android:layout_toRightOf="@id/profile_image">
 
-        <TextView
-            android:id="@+id/txt_seen"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="12sp"
-            android:maxLines="1"/>
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/show_message"
+            android:layout_alignBottom="@id/show_message"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@id/show_message"
+            android:gravity="start|bottom">
+
+            <TextView
+                android:id="@+id/txt_seen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorLetter"
+                android:textSize="12sp"
+                android:maxLines="1"/>
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorLetter"
-            android:textSize="12sp"
-            android:maxLines="1"/>
+            android:id="@+id/show_message"
+            android:layout_centerVertical="true"
+            android:lineSpacingExtra="2dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="8dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:background="@drawable/background_left"/>
 
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/profile_image"
-        android:id="@+id/show_message"
-        android:layout_centerVertical="true"
-        android:lineSpacingExtra="2dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="8dp"
-        android:paddingRight="12dp"
-        android:paddingBottom="10dp"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:background="@drawable/background_left"/>
+    </RelativeLayout>
 
 </RelativeLayout>
