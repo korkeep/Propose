@@ -115,18 +115,17 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
                     }
                 }
 
+                viewPagerAdapter.addFragment(UsersFragment.newInstance(onItemClick), "Users");
                 if (unread == 0){
                     viewPagerAdapter.addFragment(ChatsFragment.newInstance(onItemClick), "Chats");
                 } else {
                     viewPagerAdapter.addFragment(ChatsFragment.newInstance(onItemClick), "("+unread+") Chats");
                 }
-
-                viewPagerAdapter.addFragment(UsersFragment.newInstance(onItemClick), "Users");
                 viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
 
                 viewPager.setAdapter(viewPagerAdapter);
-
                 tabLayout.setupWithViewPager(viewPager);
+
                 if(dialog!=null){
                     dialog.dismiss();
                 }
@@ -135,11 +134,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
-
     }
 
     @Override
@@ -151,14 +147,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-
             case  R.id.logout:
                 FirebaseAuth.getInstance().signOut();
                 // change this code beacuse your app will crash
                 startActivity(new Intent(MainActivity.this, StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
         }
-
         return false;
     }
 
@@ -169,7 +163,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
                 ViewProfileActivity.newInstance(uid,this);
         viewProfileActivity.show(getSupportFragmentManager(),
                 "view_profile");
-
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -197,8 +190,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
             fragments.add(fragment);
             titles.add(title);
         }
-
-        // Ctrl + O
 
         @Nullable
         @Override
@@ -244,5 +235,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
             public void run() {
                 doubleBackToExitPressedOnce=false;
             }
-        }, 2000);    }
+        }, 2000);
+    }
 }

@@ -35,6 +35,7 @@
             android:id="@+id/email"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHighlight="@color/colorAccent"
             android:background="@drawable/edittext_bg"
             android:inputType="textEmailAddress"
             android:layout_marginTop="30dp"
@@ -46,6 +47,7 @@
             android:id="@+id/password"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHighlight="@color/colorAccent"
             android:background="@drawable/edittext_bg"
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
@@ -78,9 +80,6 @@
             android:id="@+id/forgot_password"
             android:textColor="@color/colorLetter"/>
 
-
     </LinearLayout>
-
-
 
 </RelativeLayout>

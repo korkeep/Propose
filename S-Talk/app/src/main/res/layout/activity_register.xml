@@ -38,6 +38,7 @@
             app:met_floatingLabel="normal"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHighlight="@color/colorAccent"
             android:hint="Username"
             tools:ignore="MissingPrefix" />
 
@@ -51,6 +52,7 @@
             app:met_floatingLabel="normal"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHighlight="@color/colorAccent"
             android:hint="Email"
             tools:ignore="MissingPrefix"/>
 
@@ -64,6 +66,7 @@
             app:met_floatingLabel="normal"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHighlight="@color/colorAccent"
             android:hint="Password"
             tools:ignore="MissingPrefix"/>
 
@@ -83,9 +86,6 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/colorLetter"/>
 
-
     </LinearLayout>
-
-
 
 </RelativeLayout>

@@ -16,4 +16,5 @@
         android:id="@+id/es_layout"
         android:visibility="gone"
         layout="@layout/empty_state"/>
+
 </RelativeLayout>

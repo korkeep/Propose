@@ -9,15 +9,16 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/search_bg"
+        android:background="@drawable/edittext_bg"
         android:padding="@dimen/padding_10_dp"
         android:layout_margin="10dp"
-        android:drawableLeft="@drawable/search_bg"
         android:drawablePadding="5dp"
-        android:background="@drawable/edittext_bg"
         android:textSize="16sp"
         android:textCursorDrawable="@null"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
+        android:textColorHighlight="@color/colorAccent"
         android:hint="Search user by name..."
         android:id="@+id/search_users"/>
 
@@ -32,6 +33,5 @@
         android:id="@+id/es_layout"
         android:visibility="gone"
         layout="@layout/empty_state"/>
-
 
 </RelativeLayout>

@@ -82,11 +82,11 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView
-                android:id="@+id/bio_tv"
+                android:id="@+id/status_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
-                android:text="Bio"
+                android:text="Status"
                 android:layout_below="@id/username"
                 android:textColor="@color/colorLetter"
                 android:layout_marginLeft="10dp"/>
@@ -99,9 +99,10 @@
                 android:enabled="false"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
+                android:textColorHighlight="@color/colorAccent"
                 android:textCursorDrawable="@null"
                 android:text=""
-                android:hint="Your bio can be of 60 words..."
+                android:hint="Your status message can be 60 words..."
                 android:maxLength="60"
                 android:minLines="4"
                 android:padding="@dimen/padding_10_dp"
@@ -109,7 +110,7 @@
                 android:gravity="top"
                 android:textSize="17sp"
                 android:background="@drawable/rounded_edittext"
-                android:layout_below="@id/bio_tv"
+                android:layout_below="@id/status_tv"
                 android:layout_centerHorizontal="true" />
 
             <Button
