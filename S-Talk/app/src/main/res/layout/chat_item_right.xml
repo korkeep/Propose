@@ -17,16 +17,33 @@
             android:id="@+id/profile_image"
             android:visibility="gone"/>
 
-        <TextView
-            android:id="@+id/time_tv"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorLetter"
-            android:textSize="12sp"
-            android:text=""
-            android:layout_marginRight="@dimen/margin_10_dp"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/show_message" />
+            android:orientation="vertical"
+            android:layout_toLeftOf="@id/show_message"
+            android:layout_alignBottom="@id/show_message"
+            android:layout_marginRight="8dp"
+            android:layout_toStartOf="@id/show_message"
+            android:gravity="end|bottom">
+
+            <TextView
+                android:id="@+id/txt_seen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorLetter"
+                android:textSize="12sp"
+                android:maxLines="1"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,25 +52,13 @@
             android:layout_alignParentEnd="true"
             android:id="@+id/show_message"
             android:lineSpacingExtra="2dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="4dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="8dp"
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
-            android:text="Hi, How are you?"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:layout_alignParentRight="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txt_seen"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:layout_marginRight="15dp"
-            android:layout_below="@id/show_message"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 
