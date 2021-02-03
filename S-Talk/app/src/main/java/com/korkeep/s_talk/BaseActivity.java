@@ -16,7 +16,7 @@ public class BaseActivity extends AppCompatActivity {
     public final String TAG = this.getClass().getSimpleName();
     private ProgressDialog progressDialog;
     public Dialog dialog;
-//    LottieAnimationView lottieAnimationView;
+//  LottieAnimationView lottieAnimationView;
 
 
     @Override
@@ -25,8 +25,6 @@ public class BaseActivity extends AppCompatActivity {
         dialog = new Dialog(this, R.style.DimDisabled);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
-
-
     }
 
     public void showLoader(String msg) {
@@ -60,19 +58,11 @@ public class BaseActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-
     public void showErrorState() {
-
     }
 
     public void showEmptyState() {
-
     }
-
-
-
-
-
 
 //    public void showSnackbar(String msg){
 //        Snackbar snackbar = Snackbar
@@ -105,6 +95,4 @@ public class BaseActivity extends AppCompatActivity {
         alertDialog.setTitle(title);
         alertDialog.show();
     }
-
-
 }

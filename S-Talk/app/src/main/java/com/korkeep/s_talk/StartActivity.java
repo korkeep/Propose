@@ -15,15 +15,11 @@ import com.google.firebase.auth.FirebaseUser;
 public class StartActivity extends AppCompatActivity {
 
     Button login, register;
-    TextView chat_title_tv;
-
     FirebaseUser firebaseUser;
 
     @Override
     protected void onStart() {
         super.onStart();
-
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         //check if user is null

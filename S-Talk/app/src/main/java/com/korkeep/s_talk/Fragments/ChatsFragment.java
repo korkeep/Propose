@@ -1,6 +1,5 @@
 package com.korkeep.s_talk.Fragments;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -98,13 +97,10 @@ public class ChatsFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
         updateToken(FirebaseInstanceId.getInstance().getToken());
-
-
         return view;
     }
 
@@ -130,15 +126,12 @@ public class ChatsFragment extends Fragment {
                         }
                     }
                 }
-
-
                 userAdapter = new UserAdapter(getContext(), onItemClick,mUsers, true);
                 recyclerView.setAdapter(userAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

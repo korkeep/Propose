@@ -14,8 +14,8 @@ public class Utils {
             ProgressDialog dialog = new ProgressDialog(context);
             try {
                 dialog.show();
-            } catch (WindowManager.BadTokenException e) {
-
+            }
+            catch (WindowManager.BadTokenException ignored) {
             }
             dialog.setCancelable(false);
             dialog.getWindow()
@@ -39,7 +39,7 @@ public class Utils {
     public static void hideLoader(ProgressDialog dialog){
         // To dismiss the dialog
         if(dialog!=null){
-        dialog.dismiss();
+            dialog.dismiss();
         }
     }
 }

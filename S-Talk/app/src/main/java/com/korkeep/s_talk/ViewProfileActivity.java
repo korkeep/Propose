@@ -31,7 +31,6 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
 
 
     public ViewProfileActivity() {
-
     }
 
     public static ViewProfileActivity newInstance(String uid, Context context) {
@@ -47,8 +46,6 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Nullable
@@ -78,7 +75,6 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-
                 }
             });
         }

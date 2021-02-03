@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -129,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
                 if(dialog!=null){
                     dialog.dismiss();
                 }
-
             }
 
             @Override
@@ -158,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
     @Override
     public void onItemCLick(String uid, View view) {
-
         ViewProfileActivity viewProfileActivity =
                 ViewProfileActivity.newInstance(uid,this);
         viewProfileActivity.show(getSupportFragmentManager(),
