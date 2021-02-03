@@ -9,7 +9,6 @@ public class User {
     private String search;
     private String bio;
 
-
     public User(String id, String username, String imageURL, String status, String search, String bio) {
         this.id = id;
         this.username = username;
@@ -20,7 +19,6 @@ public class User {
     }
 
     public User() {
-
     }
 
     public String getBio() {

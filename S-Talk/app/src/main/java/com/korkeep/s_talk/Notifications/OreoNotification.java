@@ -42,7 +42,6 @@ public class OreoNotification extends ContextWrapper {
         if (notificationManager == null){
             notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         }
-
         return  notificationManager;
     }
 

@@ -90,7 +90,6 @@ public class UsersFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
 
@@ -127,7 +126,6 @@ public class UsersFragment extends Fragment {
 
             }
         });
-
     }
 
     private void readUsers() {
@@ -154,7 +152,6 @@ public class UsersFragment extends Fragment {
                     else{
                         frameLayout.setVisibility(View.GONE);
                     }
-
                     userAdapter = new UserAdapter(getContext(), onItemClick,mUsers, false);
                     recyclerView.setAdapter(userAdapter);
                 }
@@ -162,7 +159,6 @@ public class UsersFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

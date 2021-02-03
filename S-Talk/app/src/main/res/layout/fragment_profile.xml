@@ -99,7 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_margin="@dimen/margin_10_dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/bio_et"
+                    android:id="@+id/status_et"
                     android:enabled="false"
                     android:textColorHint="@color/black"
                     android:textColor="@color/black"
@@ -120,21 +120,17 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Save"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:id="@+id/save_btn"
                     android:visibility="gone"
                     android:textAllCaps="false"
-                    android:layout_below="@id/bio_et"
-                    android:layout_marginTop="@dimen/margin_30_dp"
+                    android:layout_below="@id/status_et"
                     android:layout_centerHorizontal="true"
+                    android:textSize="18sp"
+                    android:text="Save"
                     android:background="@drawable/button_bg"
-                    android:paddingLeft="@dimen/padding_50_dp"
-                    android:paddingRight="@dimen/padding_50_dp"
-                    android:paddingTop="@dimen/padding_10_dp"
-                    android:paddingBottom="@dimen/padding_10_dp"
-                    android:backgroundTint="@color/colorLetter"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_marginBottom="@dimen/margin_20_dp" />
+                    android:textColor="@color/colorLetter" />
 
             </RelativeLayout>
 

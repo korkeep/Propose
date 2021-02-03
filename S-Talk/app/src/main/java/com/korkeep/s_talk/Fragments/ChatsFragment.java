@@ -34,9 +34,9 @@ import java.util.List;
 public class ChatsFragment extends Fragment {
 
     private RecyclerView recyclerView;
-
     private UserAdapter userAdapter;
     private List<User> mUsers;
+
     FrameLayout frameLayout;
     TextView es_descp, es_title;
 
@@ -45,7 +45,6 @@ public class ChatsFragment extends Fragment {
 
     private List<Chatlist> usersList;
     static OnItemClick onItemClick;
-
 
     public static ChatsFragment newInstance(OnItemClick click) {
 
@@ -56,6 +55,7 @@ public class ChatsFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,9 +71,7 @@ public class ChatsFragment extends Fragment {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-
         fuser = FirebaseAuth.getInstance().getCurrentUser();
-
         usersList = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("Chatlist").child(fuser.getUid());
@@ -135,5 +133,4 @@ public class ChatsFragment extends Fragment {
             }
         });
     }
-
 }

@@ -50,7 +50,7 @@ public class ProfileFragment extends Fragment {
 
     CircleImageView image_profile;
     TextView profile_tv;
-    EditText username, bio_et;
+    EditText username, status_et;
     ImageView edit_img;
     Button save;
     DatabaseReference reference;
@@ -71,7 +71,7 @@ public class ProfileFragment extends Fragment {
         image_profile = view.findViewById(R.id.profile_image);
         username = view.findViewById(R.id.username);
         profile_tv = view.findViewById(R.id.profile_tv);
-        bio_et = view.findViewById(R.id.bio_et);
+        status_et = view.findViewById(R.id.status_et);
         edit_img = view.findViewById(R.id.edit_image);
         save = view.findViewById(R.id.save_btn);
 
@@ -85,7 +85,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 save.setVisibility(View.VISIBLE);
                 username.setEnabled(true);
-                bio_et.setEnabled(true);
+                status_et.setEnabled(true);
                 username.setSelection(username.getText().length());
             }
         });
@@ -94,10 +94,9 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 username.setEnabled(false);
-                bio_et.setEnabled(false);
+                status_et.setEnabled(false);
 
-
-                reference.child("bio").setValue(bio_et.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child("bio").setValue(status_et.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
@@ -121,7 +120,6 @@ public class ProfileFragment extends Fragment {
                         }
                         else{
                             Toast.makeText(getContext(),"Unable to Save...", Toast.LENGTH_SHORT);
-
                         }
                     }
                 });
@@ -139,7 +137,7 @@ public class ProfileFragment extends Fragment {
                 if(isAdded()){
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
-                bio_et.setText(user.getBio());
+                status_et.setText(user.getBio());
                 if (user.getImageURL().equals("default")){
                     image_profile.setImageResource(R.drawable.profile_img);
                 } else {
