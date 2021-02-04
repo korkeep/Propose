@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                                         if(dialog!=null){
                                             dialog.dismiss();
                                         }
-                                        Toast.makeText(LoginActivity.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
