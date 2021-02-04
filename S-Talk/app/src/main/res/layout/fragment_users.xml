@@ -23,7 +23,7 @@
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="@color/colorAccent"
-            android:hint="Search user"
+            android:hint="Search"
             android:id="@+id/search_users"/>
 
         <androidx.recyclerview.widget.RecyclerView
