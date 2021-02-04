@@ -61,13 +61,11 @@
             android:id="@+id/text_send"
             android:textSize="16sp"
             android:padding="@dimen/padding_10_dp"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="@color/colorAccent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:background="@null"
-            android:hint="Type a message..."
             android:layout_toLeftOf="@id/btn_send"
             android:layout_centerVertical="true"/>
 

@@ -28,7 +28,7 @@
                 android:id="@+id/msg_reg_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Register yourself to continue"
+                android:text="Sign up"
                 android:layout_gravity="left"
                 android:textColor="@color/colorLetter"
                 android:textSize="20sp"/>
@@ -43,7 +43,7 @@
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/colorAccent"
-                android:hint="Username"
+                android:hint="Name"
                 tools:ignore="MissingPrefix" />
 
             <EditText
@@ -57,7 +57,7 @@
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/colorAccent"
-                android:hint="Email"
+                android:hint="E-mail"
                 tools:ignore="MissingPrefix"/>
 
             <EditText
@@ -77,7 +77,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Get Started"
+                android:text="Get started"
                 android:paddingLeft="@dimen/padding_20_dp"
                 android:paddingRight="@dimen/padding_20_dp"
                 android:id="@+id/btn_register"

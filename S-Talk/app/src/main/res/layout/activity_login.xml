@@ -28,7 +28,7 @@
                 android:id="@+id/login_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign in to continue"
+                android:text="Sign in"
                 android:layout_gravity="left"
                 android:textColor="@color/colorLetter"
                 android:textSize="20sp"/>
@@ -43,7 +43,7 @@
                 android:background="@drawable/edittext_bg"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="30dp"
-                android:hint="Email"/>
+                android:hint="E-mail"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Get started"
                 android:textSize="18sp"
                 android:textAllCaps="false"
                 android:id="@+id/btn_login"
@@ -77,14 +77,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Forgot your password?"
+                android:text="Forgot password?"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="start"
                 android:textStyle="bold"
                 android:id="@+id/forgot_password"
-                android:textColor="@color/colorLetter"/>
+                android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
+
     </RelativeLayout>
 
 </ScrollView>

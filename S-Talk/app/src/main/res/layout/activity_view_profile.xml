@@ -45,7 +45,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Username"
+                    android:text="Name"
                     android:textCursorDrawable="@null"
                     android:background="@null"
                     android:enabled="false"
@@ -76,7 +76,6 @@
                     android:id="@+id/view_bio_et"
                     android:enabled="false"
                     android:textCursorDrawable="@null"
-                    android:textColorHint="@color/black"
                     android:textColor="@color/black"
                     android:text=""
                     android:hint=""
