@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="128dp"
             android:src="@drawable/es_image" />
 
         <TextView
@@ -29,7 +30,7 @@
             android:layout_below="@id/es_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/margin_30_dp"
-            android:text="It's empty for now!"
+            android:text="It's empty for now"
             android:gravity="center"
             android:textColor="@color/colorLetter"
             android:textSize="@dimen/text_size_16_sp" />
