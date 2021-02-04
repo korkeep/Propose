@@ -27,7 +27,7 @@ Android based secure messenger application.
 - **Chat session**: 실시간 채팅 메시지 송·수신
 
 ## Firebase
-![firebase](https://user-images.githubusercontent.com/20378368/106859640-ade71780-6706-11eb-89ff-dbe02cceebd4.png){: width="40%" height="40%"}{: .center}
+![firebase](https://user-images.githubusercontent.com/20378368/106863007-454e6980-670b-11eb-9a32-a37c2c0bf8d0.png)
 ### Firebase Project Create
 - **Step 1**: [Firebase 콘솔 접속 & 프로젝트 생성](https://console.firebase.google.com/)
 - **Step 2**: [google-services.json 파일을 Android Studio의 프로젝트에 추가](https://firebase.google.com/docs/android/setup?hl=ko)
