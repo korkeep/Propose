@@ -3,6 +3,7 @@ package com.korkeep.s_talk;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,7 +55,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(ResetPasswordActivity.this, "Please check your E-mail", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(ResetPasswordActivity.this, LoginActivity.class));
+                                startActivity(new Intent(ResetPasswordActivity.this, StartActivity.class));
                             } else {
                                 String error = task.getException().getMessage();
                                 Toast.makeText(ResetPasswordActivity.this, error, Toast.LENGTH_SHORT).show();
@@ -64,5 +65,13 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if (item.getItemId() == android.R.id.home){
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

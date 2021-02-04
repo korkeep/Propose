@@ -38,11 +38,6 @@
 
         <activity android:name=".MainActivity" />
 
-        <activity
-            android:name=".LoginActivity"
-            android:parentActivityName=".StartActivity"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
         <activity android:name=".MessageActivity" />
 
         <activity

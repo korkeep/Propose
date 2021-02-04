@@ -28,7 +28,7 @@
                 android:id="@+id/msg_reg_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign up"
+                android:text="Create new account"
                 android:layout_gravity="left"
                 android:textColor="@color/colorLetter"
                 android:textSize="20sp"/>
@@ -74,21 +74,30 @@
                 android:hint="Password"
                 tools:ignore="MissingPrefix"/>
 
+            <TextView
+                android:id="@+id/hint_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password must be at least 6 characters"
+                android:layout_gravity="left"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="14dp"
+                android:textSize="14sp"
+                tools:ignore="RtlHardcoded" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Get started"
+                android:id="@+id/btn_register"
                 android:paddingLeft="@dimen/padding_20_dp"
                 android:paddingRight="@dimen/padding_20_dp"
-                android:id="@+id/btn_register"
-                android:drawablePadding="40dp"
-                android:textAllCaps="false"
-                android:layout_gravity="left"
-                android:textSize="18sp"
-                android:drawableRight="@drawable/ic_arrow_img"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_bg"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/colorLetter"/>
+                android:text="Sign up"
+                android:textSize="18sp"
+                android:textColor="@color/colorLetter"
+                android:textAllCaps="false"/>
 
         </LinearLayout>
 
