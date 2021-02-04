@@ -49,26 +49,17 @@ public class MessageActivity extends AppCompatActivity {
 
     CircleImageView profile_image;
     TextView username;
-
     FirebaseUser fuser;
     DatabaseReference reference;
-
     ImageButton btn_send;
     EditText text_send;
-
     MessageAdapter messageAdapter;
     List<Chat> mchat;
-
     RecyclerView recyclerView;
-
     Intent intent;
-
     ValueEventListener seenListener;
-
     String userid;
-
     APIService apiService;
-
     boolean notify = false;
 
     @Override
@@ -120,9 +111,7 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
-
         reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
-
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -134,16 +123,13 @@ public class MessageActivity extends AppCompatActivity {
                     //and this
                     Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
                 }
-
-                readMesagges(fuser.getUid(), userid, user.getImageURL());
+                readMessagges(fuser.getUid(), userid, user.getImageURL());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
         seenMessage(userid);
     }
 
@@ -260,7 +246,7 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
-    private void readMesagges(final String myid, final String userid, final String imageurl){
+    private void readMessagges(final String myid, final String userid, final String imageurl){
         mchat = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("Chats");
@@ -272,7 +258,7 @@ public class MessageActivity extends AppCompatActivity {
                     Chat chat = snapshot.getValue(Chat.class);
                     if (chat.getReceiver().equals(myid) && chat.getSender().equals(userid) ||
                             chat.getReceiver().equals(userid) && chat.getSender().equals(myid)){
-                        mchat.add(chat);
+                                mchat.add(chat);
                     }
 
                     messageAdapter = new MessageAdapter(MessageActivity.this, mchat, imageurl);
