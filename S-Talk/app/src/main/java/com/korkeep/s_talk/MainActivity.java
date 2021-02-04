@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
             }
         });
 
-
         reference = FirebaseDatabase.getInstance().getReference("Chats");
         dialog = Utils.showLoader(MainActivity.this);
 
