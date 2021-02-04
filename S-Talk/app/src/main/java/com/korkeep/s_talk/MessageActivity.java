@@ -60,6 +60,7 @@ public class MessageActivity extends AppCompatActivity {
     ValueEventListener seenListener;
     String userid;
     APIService apiService;
+    String photoURL;
     boolean notify = false;
 
     @Override
@@ -123,7 +124,7 @@ public class MessageActivity extends AppCompatActivity {
                     //and this
                     Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
                 }
-                readMessagges(fuser.getUid(), userid, user.getImageURL());
+                readMessages(fuser.getUid(), userid, user.getImageURL());
             }
 
             @Override
@@ -190,15 +191,14 @@ public class MessageActivity extends AppCompatActivity {
                 .child(fuser.getUid());
         chatRefReceiver.child("id").setValue(fuser.getUid());
 
-        final String msg = message;
-
         reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
+                photoURL = user.getImageURL();
                 if (notify) {
-                    sendNotifiaction(receiver, user.getUsername(), msg);
+                    sendNotification(receiver, user.getUsername());
                 }
                 notify = false;
             }
@@ -209,7 +209,7 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
-    private void sendNotifiaction(String receiver, final String username, final String message){
+    private void sendNotification(String receiver, final String username){
         DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
         Query query = tokens.orderByKey().equalTo(receiver);
         query.addValueEventListener(new ValueEventListener() {
@@ -217,9 +217,7 @@ public class MessageActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Token token = snapshot.getValue(Token.class);
-                    Data data = new Data(fuser.getUid(), R.drawable.profile_img, username+": "+message, "New Message",
-                            userid);
-
+                    Data data = new Data(fuser.getUid(), R.drawable.icon, "New S-Talk message", username, userid, photoURL);
                     Sender sender = new Sender(data, token.getToken());
 
                     apiService.sendNotification(sender)
@@ -246,7 +244,7 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
-    private void readMessagges(final String myid, final String userid, final String imageurl){
+    private void readMessages(final String myid, final String userid, final String imageurl){
         mchat = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("Chats");
