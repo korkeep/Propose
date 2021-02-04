@@ -29,12 +29,10 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
     ImageView profile_img;
     static Context mContext;
 
-
     public ViewProfileActivity() {
     }
 
     public static ViewProfileActivity newInstance(String uid, Context context) {
-
         Bundle args = new Bundle();
         args.putString("uid",uid);
         mContext = context;
@@ -78,10 +76,6 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
                 }
             });
         }
-
         return view;
-    }
-
-    public void show(FragmentManager supportFragmentManager, String view_profile) {
     }
 }
