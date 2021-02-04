@@ -1,11 +1,22 @@
 
 # S-Talk
 ## Project Goal
-Android based secure messenger application.
+보안 기능이 향상된 Android 메신저 앱 개발
+
+## Features
+- 공개키 기반 메시지 암·복호화
+- TEE를 활용하여 개인키 유출 방지
+- 지문 정보를 이용한 2단계 인증
+- SSL/TLS를 이용한 데이터 전송
 
 ## To-Do List
-- Message data encryption & decryption
-- Secondary password using fingerprint
+- 회원 탈퇴 기능 개발
+- 회원 가입 과정에서의 인증 기능 추가
+- 로그인 과정 카카오톡처럼 이쁘게 수정
+- 공개키 기반 메시지 암·복호화
+- TEE 환경에 개인키 저장
+- 지문 정보를 이용한 2단계 인증
+- SSL/TLS를 이용한 데이터 전송
 
 ## Application UI
 ### Sign up & Sign in
@@ -15,7 +26,7 @@ Android based secure messenger application.
 ### Reset Password
 ![reset](https://user-images.githubusercontent.com/20378368/106859126-f5b96f00-6705-11eb-9574-a25868ab7d14.PNG)
 - **Reset**: 비밀번호 재설정 기능
-- **E-mail Link**: 이메일 링크 클릭 시 재설정 가능
+- **E-mail link**: 이메일 링크 클릭 시 재설정 가능
 ### Main Activity
 ![main](https://user-images.githubusercontent.com/20378368/106858375-e8e84b80-6704-11eb-8f3a-7951e3476dce.PNG)
 - **USERS**: 채팅 가능한 상대 검색
@@ -42,26 +53,6 @@ Android based secure messenger application.
 ![image](https://user-images.githubusercontent.com/20378368/106861009-8729e080-6708-11eb-966a-de7ff8ca0f78.png)
 - **Step 6**: Storage 기능 활성화
 - **Step 7**: Storage 규칙을 "allow read, write: if true != null;"로 설정
-## Firebase Cloud Messaging
+### Firebase Cloud Messaging
 ![image](https://user-images.githubusercontent.com/20378368/106861863-b2f99600-6709-11eb-8fb7-937220d61596.png)
-- **Step 8**: 서버 키를 APIService.java에 붙여넣기
-
-<!--
-If you want a APK then create an issue, i'll send the link..
-<br><b>ChatApp is a real time one to one chat application with Push Notifications made using Firebase...</b>
-
-Add yours google-services.json
-<br><b> Change Authorization:key with your key from firebase project</b>
-
-<br>Implementation Guide 
-<br>1 - Project
-<br>1 - Open the Project in your android studio;
-<br>2 - *IMPORTANT* Change the Package Name. (https://stackoverflow.com/questions/16804093/android-studio-rename-package)
-
-<br>2 - Firebase Panel
-<br>- Create Firebase Project (https://console.firebase.google.com/);
-<br>- Import the file google-service.json into your project
-<br>- Connect to firebase console authentication and database from your IDE
-<br>- in firebase Storage Rules, change value of "allow read, write:" from "if request.auth != null" to "if true;"
-<br>- For sending notification, paste your Firebase project key into your project APIService.java
-<br>- When you change database settings, you likely will need to uninstall and reinstall apps to avoid app crashes due to app caches. -->
+- **Step 8**: Firebase의 서버 키를 APIService.java에 붙여넣기
