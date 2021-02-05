@@ -18,18 +18,18 @@
 ## Application UI
 ### Login Activity
 ![image](https://user-images.githubusercontent.com/20378368/107027252-37721480-67ef-11eb-9c95-283c3e25f60e.png)
-- **Sign in**: 로그인 기능
-- **Sign up**: 회원 가입 기능
+- **Login**: 로그인 기능
+- **Register**: 회원 가입 기능
 - **Reset**: 비밀번호 재설정 기능
 ### Main Activity
 ![main](https://user-images.githubusercontent.com/20378368/106858375-e8e84b80-6704-11eb-8f3a-7951e3476dce.PNG)
-- **USERS**: 채팅 가능한 상대 검색
-- **CHATS**: User의 채팅 세션 리스트
+- **USERS**: 채팅 상대 리스트
+- **CHATS**: User의 채팅 리스트
 - **PROFILE**: User의 프로필 정보
 ### Chat Activity
 ![chat](https://user-images.githubusercontent.com/20378368/106858325-d5d57b80-6704-11eb-9e12-60b26c219010.PNG)
-- **Push message**: Push 알림을 통한 메시지 수신
-- **Chat session**: 실시간 채팅 메시지 송·수신
+- **Push**: Push 알림을 통한 메시지 수신
+- **Chat**: 실시간 채팅 메시지 송·수신
 
 ## Firebase
 ![firebase](https://user-images.githubusercontent.com/20378368/106863007-454e6980-670b-11eb-9a32-a37c2c0bf8d0.png)
