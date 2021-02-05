@@ -10,21 +10,17 @@
 - SSL/TLS를 이용한 데이터 전송
 
 ## To-Do List
-- 회원 가입 과정에서의 인증 기능 추가
 - 공개키 기반 메시지 암·복호화
 - TEE 환경에 개인키 저장
 - 지문 정보를 이용한 2단계 인증
 - SSL/TLS를 이용한 데이터 전송
 
 ## Application UI
-### Sign up & Sign in
-![start](https://user-images.githubusercontent.com/20378368/106858846-98bdb900-6705-11eb-83c4-e690581e7ae0.PNG)
-- **Sign up**: 회원 가입 기능
+### Login Activity
+![image](https://user-images.githubusercontent.com/20378368/107027252-37721480-67ef-11eb-9c95-283c3e25f60e.png)
 - **Sign in**: 로그인 기능
-### Reset Password
-![reset](https://user-images.githubusercontent.com/20378368/106859126-f5b96f00-6705-11eb-9574-a25868ab7d14.PNG)
+- **Sign up**: 회원 가입 기능
 - **Reset**: 비밀번호 재설정 기능
-- **E-mail link**: 이메일 링크 클릭 시 재설정 가능
 ### Main Activity
 ![main](https://user-images.githubusercontent.com/20378368/106858375-e8e84b80-6704-11eb-8f3a-7951e3476dce.PNG)
 - **USERS**: 채팅 가능한 상대 검색
