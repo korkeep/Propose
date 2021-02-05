@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -66,7 +65,6 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
                     if (user.getImageURL().equals("default")){
                         profile_img.setImageResource(R.drawable.profile_img);
                     } else {
-                        //change this
                         Glide.with(mContext.getApplicationContext()).load(user.getImageURL()).into(profile_img);
                     }
                 }
