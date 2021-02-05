@@ -15,7 +15,6 @@ public interface APIService {
                     "Authorization:key=AAAAufaRe2U:APA91bEFfLbQGB-9vzxPyKDlxnRmTzzXG-nqpDHkHXmDXTk4vKiVZThVUDNMvHKM-J_oHAMSRLd3UtRJze0Z5MB2rD2u_65Ggb2KYKCitDez5blMqy5aQW9ekZVYmi5WYA7LLrvqqYcq"
             }
     )
-
     @POST("fcm/send")
     Call<MyResponse> sendNotification(@Body Sender body);
 }

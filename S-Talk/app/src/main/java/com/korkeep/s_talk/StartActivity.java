@@ -20,14 +20,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class StartActivity extends AppCompatActivity {
-
     TextView register, reset;
     FirebaseUser firebaseUser;
-
     EditText email, password;
     Button btn_login;
     ProgressDialog dialog;
-
     FirebaseAuth auth;
 
     @Override
@@ -35,7 +32,6 @@ public class StartActivity extends AppCompatActivity {
         super.onStart();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        //check if user is null
         if (firebaseUser != null){
             Intent intent = new Intent(StartActivity.this, MainActivity.class);
             startActivity(intent);
@@ -68,26 +64,25 @@ public class StartActivity extends AppCompatActivity {
                     Toast.makeText(StartActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 } else {
                     dialog = Utils.showLoader(StartActivity.this);
-                    auth.signInWithEmailAndPassword(txt_email, txt_password)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()){
-                                        Intent intent = new Intent(StartActivity.this, MainActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        if(dialog!=null){
-                                            dialog.dismiss();
-                                        }
-                                        startActivity(intent);
-                                        finish();
-                                    } else {
-                                        if(dialog!=null){
-                                            dialog.dismiss();
-                                        }
-                                        Toast.makeText(StartActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
-                                    }
+                    auth.signInWithEmailAndPassword(txt_email, txt_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                if(dialog!=null){
+                                    dialog.dismiss();
                                 }
-                            });
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                if(dialog!=null){
+                                    dialog.dismiss();
+                                }
+                                Toast.makeText(StartActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });

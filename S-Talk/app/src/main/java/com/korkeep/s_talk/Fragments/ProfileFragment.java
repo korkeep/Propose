@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -47,7 +46,6 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class ProfileFragment extends Fragment {
-
     CircleImageView image_profile;
     TextView profile_tv;
     EditText username, status_et;
@@ -59,13 +57,11 @@ public class ProfileFragment extends Fragment {
     StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
     private Uri imageUri;
-    private StorageTask uploadTask;
+    private StorageTask<UploadTask.TaskSnapshot> uploadTask;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         image_profile = view.findViewById(R.id.profile_image);
@@ -97,29 +93,26 @@ public class ProfileFragment extends Fragment {
                 status_et.setEnabled(false);
 
                 reference.child("bio").setValue(status_et.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @SuppressLint("ShowToast")
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                         //   Toast.makeText(getContext(),"Profile Updated...", Toast.LENGTH_SHORT);
+                            Toast.makeText(getContext(),"Profile Updated", Toast.LENGTH_SHORT);
                         }
                         else{
-                         //   Toast.makeText(getContext(),"Unable to Save...", Toast.LENGTH_SHORT);
-
+                            Toast.makeText(getContext(),"Unable to Save", Toast.LENGTH_SHORT);
                         }
                     }
                 });
-
-
-
                 reference.child("username").setValue(username.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @SuppressLint("ShowToast")
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(getContext(),"Profile Updated...", Toast.LENGTH_SHORT);
+                            Toast.makeText(getContext(),"Profile Updated", Toast.LENGTH_SHORT);
                         }
                         else{
-                            Toast.makeText(getContext(),"Unable to Save...", Toast.LENGTH_SHORT);
+                            Toast.makeText(getContext(),"Unable to Save", Toast.LENGTH_SHORT);
                         }
                     }
                 });
@@ -129,26 +122,24 @@ public class ProfileFragment extends Fragment {
 
         });
 
-
-
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(isAdded()){
-                User user = dataSnapshot.getValue(User.class);
-                username.setText(user.getUsername());
-                status_et.setText(user.getBio());
-                if (user.getImageURL().equals("default")){
-                    image_profile.setImageResource(R.drawable.profile_img);
-                } else {
-                    Glide.with(getContext()).load(user.getImageURL()).into(image_profile);
+                    User user = dataSnapshot.getValue(User.class);
+                    username.setText(user.getUsername());
+                    status_et.setText(user.getBio());
+
+                    if (user.getImageURL().equals("default")){
+                        image_profile.setImageResource(R.drawable.profile_img);
+                    } else {
+                        Glide.with(getContext()).load(user.getImageURL()).into(image_profile);
+                    }
                 }
-            }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -175,17 +166,16 @@ public class ProfileFragment extends Fragment {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void uploadImage(){
         final ProgressDialog pd = new ProgressDialog(getContext());
         pd.setIndeterminateDrawable(getResources().getDrawable(R.drawable.ic_picture));
 
-        pd.setMessage("Uploading...");
+        pd.setMessage("Uploading");
         pd.show();
 
         if (imageUri != null){
-            final  StorageReference fileReference = storageReference.child(System.currentTimeMillis()
-                    +"."+getFileExtension(imageUri));
-
+            final StorageReference fileReference = storageReference.child(System.currentTimeMillis() +"."+getFileExtension(imageUri));
             uploadTask = fileReference.putFile(imageUri);
             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
@@ -193,7 +183,6 @@ public class ProfileFragment extends Fragment {
                     if (!task.isSuccessful()){
                         throw  task.getException();
                     }
-
                     return  fileReference.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
@@ -202,15 +191,13 @@ public class ProfileFragment extends Fragment {
                     if (task.isSuccessful()){
                         Uri downloadUri = task.getResult();
                         String mUri = downloadUri.toString();
-
                         reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
                         HashMap<String, Object> map = new HashMap<>();
                         map.put("imageURL", ""+mUri);
                         reference.updateChildren(map);
-
                         pd.dismiss();
                     } else {
-                        Toast.makeText(getContext(), "Failed!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Unable to Save", Toast.LENGTH_SHORT).show();
                         pd.dismiss();
                     }
                 }
@@ -222,7 +209,7 @@ public class ProfileFragment extends Fragment {
                 }
             });
         } else {
-            Toast.makeText(getContext(), "No image selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Image isn't selected", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -235,7 +222,7 @@ public class ProfileFragment extends Fragment {
             imageUri = data.getData();
 
             if (uploadTask != null && uploadTask.isInProgress()){
-                Toast.makeText(getContext(), "Upload in progress", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Upload task is busy", Toast.LENGTH_SHORT).show();
             } else {
                 uploadImage();
             }

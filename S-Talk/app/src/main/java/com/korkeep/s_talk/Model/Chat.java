@@ -23,39 +23,29 @@ public class Chat {
         return sender;
     }
 
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
+    public void setSender(String sender) { this.sender = sender; }
 
     public String getReceiver() {
         return receiver;
     }
 
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
-    }
+    public void setReceiver(String receiver) { this.receiver = receiver; }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    public void setMessage(String message) { this.message = message; }
 
     public boolean isIsseen() {
         return isseen;
     }
 
-    public void setIsseen(boolean isseen) {
-        this.isseen = isseen;
-    }
+    public void setIsseen(boolean isseen) { this.isseen = isseen; }
 
     public String getTime() {
         return time;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
+    public void setTime(String time) { this.time = time; }
 }

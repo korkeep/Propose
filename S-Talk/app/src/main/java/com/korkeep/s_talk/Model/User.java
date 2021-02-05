@@ -25,9 +25,7 @@ public class User {
         return bio;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+    public void setBio(String bio) { this.bio = bio; }
 
     public String getId() {
         return id;
@@ -49,23 +47,15 @@ public class User {
         return imageURL;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
+    public void setImageURL(String imageURL) { this.imageURL = imageURL; }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public void setStatus(String status) { this.status = status; }
 
-    public String getSearch() {
-        return search;
-    }
+    public String getSearch() { return search; }
 
-    public void setSearch(String search) {
-        this.search = search;
-    }
+    public void setSearch(String search) { this.search = search; }
 }

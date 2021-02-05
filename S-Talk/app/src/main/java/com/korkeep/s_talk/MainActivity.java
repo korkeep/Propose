@@ -2,7 +2,6 @@ package com.korkeep.s_talk;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -145,11 +144,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.logout) {
             FirebaseAuth.getInstance().signOut();
-
             Intent intent = new Intent(MainActivity.this, StartActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-
             return true;
         }
         return false;
@@ -157,16 +154,14 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
     @Override
     public void onItemCLick(String uid, View view) {
-        ViewProfileActivity viewProfileActivity =
-                ViewProfileActivity.newInstance(uid,this);
-        viewProfileActivity.show(getSupportFragmentManager(),
-                "view_profile");
+        ViewProfileActivity viewProfileActivity = ViewProfileActivity.newInstance(uid,this);
+        viewProfileActivity.show(getSupportFragmentManager(), "view_profile");
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    static class ViewPagerAdapter extends FragmentPagerAdapter {
 
-        private ArrayList<Fragment> fragments;
-        private ArrayList<String> titles;
+        private final ArrayList<Fragment> fragments;
+        private final ArrayList<String> titles;
 
         ViewPagerAdapter(FragmentManager fm){
             super(fm);
@@ -174,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
             this.titles = new ArrayList<>();
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             return fragments.get(position);
@@ -228,7 +224,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
         Toast.makeText(this, "Please click again to exit", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
-
             @Override
             public void run() {
                 doubleBackToExitPressedOnce=false;

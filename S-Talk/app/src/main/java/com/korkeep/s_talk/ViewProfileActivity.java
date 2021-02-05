@@ -1,5 +1,6 @@
 package com.korkeep.s_talk;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
     DatabaseReference reference;
     TextView username, bio_et;
     ImageView profile_img;
+    @SuppressLint("StaticFieldLeak")
     static Context mContext;
 
     public ViewProfileActivity() {

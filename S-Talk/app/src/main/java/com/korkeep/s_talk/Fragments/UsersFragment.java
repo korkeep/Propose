@@ -1,6 +1,5 @@
 package com.korkeep.s_talk.Fragments;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,7 +34,6 @@ import java.util.List;
 
 
 public class UsersFragment extends Fragment {
-
     private RecyclerView recyclerView;
 
     FrameLayout frameLayout;
@@ -57,9 +55,7 @@ public class UsersFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_users, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -80,7 +76,6 @@ public class UsersFragment extends Fragment {
         search_users.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -97,12 +92,9 @@ public class UsersFragment extends Fragment {
     }
 
     private void searchUsers(String s) {
-
         final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
-        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("search")
-                .startAt(s)
-                .endAt(s+"\uf8ff");
 
+        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("search").startAt(s).endAt(s+"\uf8ff");
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -116,20 +108,17 @@ public class UsersFragment extends Fragment {
                         mUsers.add(user);
                     }
                 }
-
                 userAdapter = new UserAdapter(getContext(),onItemClick, mUsers, false);
                 recyclerView.setAdapter(userAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
 
     private void readUsers() {
-
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 

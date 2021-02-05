@@ -47,7 +47,6 @@ public class ChatsFragment extends Fragment {
     static OnItemClick onItemClick;
 
     public static ChatsFragment newInstance(OnItemClick click) {
-
         onItemClick = click;
         Bundle args = new Bundle();
 
@@ -57,8 +56,7 @@ public class ChatsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chats, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -89,7 +87,6 @@ public class ChatsFragment extends Fragment {
                 else{
                     frameLayout.setVisibility(View.GONE);
                 }
-
                 chatList();
             }
 
