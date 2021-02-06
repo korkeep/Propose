@@ -70,19 +70,11 @@
                 android:textSize="18sp"
                 android:textAllCaps="false"/>
 
-            <com.korkeep.s_talk.Fingerprint.view.Fingerprint
-                android:id="@+id/Fingerprint"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                app:srcCompat="@drawable/icon" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="80dp">
+                android:layout_marginTop="128dp">
 
                 <TextView
                     android:id="@+id/make_account"
