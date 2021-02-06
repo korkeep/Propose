@@ -4,18 +4,18 @@
 보안 기능이 향상된 Android 메신저 앱 개발
 
 ## Features
-- 공개키 기반 메시지 암·복호화
-- TEE를 활용하여 개인키 유출 방지
 - 지문 정보를 이용한 2단계 인증
+- 공개키 기반 메시지 암·복호화
 - SSL/TLS를 이용한 데이터 전송
 
 ## To-Do List
 - 공개키 기반 메시지 암·복호화
-- TEE 환경에 개인키 저장
-- 지문 정보를 이용한 2단계 인증
 - SSL/TLS를 이용한 데이터 전송
 
 ## Application UI
+### Splash Activity
+![image](https://user-images.githubusercontent.com/20378368/107114927-b9744300-68ac-11eb-886a-1b6cf133f6a0.png)
+- **Fingerprint**: 지문을 이용한 2단계 인증
 ### Login Activity
 ![image](https://user-images.githubusercontent.com/20378368/107027252-37721480-67ef-11eb-9c95-283c3e25f60e.png)
 - **Login**: 로그인 기능
