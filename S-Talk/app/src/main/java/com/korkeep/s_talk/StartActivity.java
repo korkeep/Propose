@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,10 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import com.korkeep.s_talk.Fingerprint.callback.FingerprintCallback;
-import com.korkeep.s_talk.Fingerprint.view.Fingerprint;
-
-public class StartActivity extends AppCompatActivity implements FingerprintCallback {
+public class StartActivity extends AppCompatActivity {
     TextView register, reset;
     FirebaseUser firebaseUser;
     EditText email, password;
@@ -40,7 +36,7 @@ public class StartActivity extends AppCompatActivity implements FingerprintCallb
         super.onStart();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (firebaseUser != null){
+        if (firebaseUser != null) {
             Intent intent = new Intent(StartActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
@@ -61,21 +57,37 @@ public class StartActivity extends AppCompatActivity implements FingerprintCallb
         reset = findViewById(R.id.reset_password);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-                @SuppressLint("WrongViewCast") final Fingerprint fingerprint = findViewById(R.id.Fingerprint);
 
                 txt_email = email.getText().toString();
                 txt_password = password.getText().toString();
 
                 Utils.hideKeyboard(StartActivity.this);
 
-                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
+                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
                     Toast.makeText(StartActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 } else {
                     dialog = Utils.showLoader(StartActivity.this);
-                    fingerprint.callback(StartActivity.this).authenticate();
+                    auth.signInWithEmailAndPassword(txt_email, txt_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                if (dialog != null) {
+                                    dialog.dismiss();
+                                }
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                if (dialog != null) {
+                                    dialog.dismiss();
+                                }
+                                Toast.makeText(StartActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -93,46 +105,5 @@ public class StartActivity extends AppCompatActivity implements FingerprintCallb
                 startActivity(new Intent(StartActivity.this, ResetPasswordActivity.class));
             }
         });
-    }
-
-    @Override
-    public void onAuthenticationSucceeded() {
-        // Logic when fingerprint is recognized
-        auth.signInWithEmailAndPassword(txt_email, txt_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    Intent intent = new Intent(StartActivity.this, MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    if(dialog!=null){
-                        dialog.dismiss();
-                    }
-                    startActivity(intent);
-                    finish();
-                } else {
-                    if(dialog!=null){
-                        dialog.dismiss();
-                    }
-                    Toast.makeText(StartActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-    @Override
-    public void onAuthenticationFailed() {
-        // Logic when fingerprint failed to recognize
-        /*if(dialog!=null){
-            dialog.dismiss();
-        }*/
-    }
-
-    @Override
-    public void onAuthenticationError(int errorCode, String error) {
-        // Logic when an error raised while authenticating
-        // See Android Doc for errorCode meaning
-        if(dialog!=null){
-            dialog.dismiss();
-        }
     }
 }
